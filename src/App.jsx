@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import { Menu } from './components/Menu'
-import { About } from './components/About'
-import { Footer } from './components/Footer'
-import { AnecdoteList } from './components/AnecdoteList'
+import { Menu } from "./components/Menu";
+import { About } from "./components/About";
+import { Footer } from "./components/Footer";
+import { AnecdoteList } from "./components/AnecdoteList";
 import { CreateNewAnecdote } from "./components/CreateNewAnecdote";
-
+import { Anecdote } from "./components/Anecdote";
 
 const App = () => {
   const [anecdotes, setAnecdotes] = useState([
@@ -50,9 +50,24 @@ const App = () => {
       <div>
         <h1>Software anecdotes</h1>
         <Menu />
-        <AnecdoteList anecdotes={anecdotes} />
-        <About />
-        <CreateNewAnecdote addNew={addNew} />
+        <Routes>
+          <Route 
+            path="/" 
+            element={<AnecdoteList anecdotes={anecdotes} />}
+          />
+          <Route
+            path="/anecdotes/:id"
+            element={<Anecdote anecdotes={anecdotes} />}
+          />
+          <Route 
+            path="/about" 
+            element={<About />}
+          />
+          <Route
+            path="/create"
+            element={<CreateNewAnecdote addNew={addNew} />}
+          />
+        </Routes>
         <Footer />
       </div>
     </Router>
