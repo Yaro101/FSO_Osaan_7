@@ -1,10 +1,12 @@
 import { useState } from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 export const CreateNewAnecdote = ({ addNew }) => {
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
   const [info, setInfo] = useState("");
+  const navigate = useNavigate(); // Initializing useNavigate
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +16,11 @@ export const CreateNewAnecdote = ({ addNew }) => {
       info,
       votes: 0,
     });
+    // clearing form fields after submission
+    setContent("");
+    setAuthor("");
+    setInfo("");
+    navigate("/"); // Redirect to the anecdote list 
   };
 
   return (
@@ -44,12 +51,12 @@ export const CreateNewAnecdote = ({ addNew }) => {
             onChange={(e) => setInfo(e.target.value)}
           />
         </div>
-        <button>create</button>
+        <button type="submit">create</button>
       </form>
     </div>
   );
 };
 
-CreateNewAnecdote.propTypes={
-  addNew: PropTypes.func.isRequired
-}
+CreateNewAnecdote.propTypes = {
+  addNew: PropTypes.func.isRequired,
+};
