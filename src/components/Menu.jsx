@@ -1,24 +1,28 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Menu = () => {
-    const padding = {
+  const menuStyle = {
+    backgroundColor: "whitesmoke",
+    padding: "16px",
+  };
+  const navLinkStyle = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      textDecoration: isActive ? "none" : "underline",
       paddingRight: 20,
     };
-    const menuStyle = {
-        backgroundColor: 'whitesmoke',
-        padding: '16px',
-    }
-    return (
-      <div style={menuStyle}>
-        <Link to="/" style={padding}>
-          anecdotes
-        </Link>
-        <Link to="/create" style={padding}>
-          create new
-        </Link>
-        <Link to="/about" style={padding}>
-          about
-        </Link>
-      </div>
-    );
   };
+  return (
+    <div style={menuStyle}>
+      <NavLink to="/" style={navLinkStyle}>
+        anecdotes
+      </NavLink>
+      <NavLink to="/create" style={navLinkStyle}>
+        create new
+      </NavLink>
+      <NavLink to="/about" style={navLinkStyle}>
+        about
+      </NavLink>
+    </div>
+  );
+};
