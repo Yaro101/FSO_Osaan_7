@@ -6,10 +6,11 @@ export const Notification = ({ message }) => {
   }
   const notificationStyle = {
     border: "solid",
+    backgroundColor: 'mintcream',
     padding: 10,
     borderWidth: 2,
     marginBottom: 10,
-    color: "green",
+    borderColor: 'green',
   };
   return <div style={notificationStyle}>{message}</div>;
 };
