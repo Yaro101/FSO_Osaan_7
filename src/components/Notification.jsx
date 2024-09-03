@@ -7,7 +7,7 @@ export const Notification = ({ message }) => {
   const notificationStyle = {
     border: "solid",
     padding: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     marginBottom: 10,
     color: "green",
   };
