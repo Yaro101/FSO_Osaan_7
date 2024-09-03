@@ -1,6 +1,9 @@
 export const Footer = () => {
+    const footerStyle = {
+        backgroundColor: 'aliceblue',
+    }
   return (
-    <div>
+    <div style={footerStyle}>
       <br />
       Anecdote app for <a href="https://fullstackopen.com/">Full Stack Open</a>.
       See{" "}
