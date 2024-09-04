@@ -1,6 +1,9 @@
 export const Footer = () => {
     const footerStyle = {
         backgroundColor: 'aliceblue',
+        margin: '20px auto',
+        padding: '10px',
+        textAlign: 'center',
     }
   return (
     <div style={footerStyle}>
