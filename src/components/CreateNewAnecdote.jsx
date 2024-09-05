@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { useField } from "../hooks";
 
 export const CreateNewAnecdote = ({ addNew }) => {
+
+  const BtnStyle = {
+    margin: '5px 10px',
+  };
+
   const content = useField("content");
   const author = useField("author");
   const info = useField("info");
@@ -52,7 +57,8 @@ export const CreateNewAnecdote = ({ addNew }) => {
             onChange={info.onChange}
           />
         </div>
-        <button type="submit">create</button>
+        <button type="submit" style={BtnStyle}>create</button>
+        <button type="" style={BtnStyle}>reset</button>
       </form>
     </div>
   );
