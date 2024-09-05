@@ -60,7 +60,7 @@ const App = () => {
         <Routes>
           <Route 
             path="/" 
-            element={<AnecdoteList anecdotes={anecdotes} />}
+            element={<AnecdoteList anecdotes={anecdotes} vote={vote} />}
           />
           <Route
             path="/anecdotes/:id"
