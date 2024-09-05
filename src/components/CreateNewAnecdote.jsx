@@ -9,25 +9,30 @@ export const CreateNewAnecdote = ({ addNew }) => {
     margin: '5px 10px',
   };
 
-  const content = useField("content");
-  const author = useField("author");
-  const info = useField("info");
+  const content = useField("text");
+  const author = useField("text");
+  const info = useField("text");
   const navigate = useNavigate(); // Initializing useNavigate
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addNew({
-      content,
-      author,
-      info,
+      content: content.value,
+      author: author.value,
+      info: info.value,
       votes: 0,
     });
-    // clearing form fields after submission
-    // setContent("");
-    // setAuthor("");
-    // setInfo("");
+
     navigate("/"); // Redirect to the anecdote list 
   };
+
+  const handleReset = (e) =>{
+    e.preventDefault()
+    // using reset func from the custom hook
+    content.reset()
+    author.reset()
+    info.reset()
+  }
 
   return (
     <div>
@@ -58,7 +63,7 @@ export const CreateNewAnecdote = ({ addNew }) => {
           />
         </div>
         <button type="submit" style={BtnStyle}>create</button>
-        <button type="" style={BtnStyle}>reset</button>
+        <button onClick={handleReset} style={BtnStyle}>reset</button>
       </form>
     </div>
   );
