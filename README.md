@@ -1,4 +1,4 @@
-# Osaan 7 tehtavat 7.1 - 7.5
+# Osaan 7 tehtavat 7.1 - 7.6
 
 # React + Vite
 
