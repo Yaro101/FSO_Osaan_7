@@ -9,6 +9,7 @@ export const Menu = () => {
     return {
       fontWeight: isActive ? "bold" : "normal",
       textDecoration: isActive ? "none" : "underline",
+      fontSize: '1.2em',
       paddingRight: 20,
     };
   };
