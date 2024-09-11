@@ -1,7 +1,6 @@
-// import { useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import { useField } from "../hooks";
+import { useField } from "../hooks/index";
 
 export const CreateNewAnecdote = ({ addNew }) => {
 
